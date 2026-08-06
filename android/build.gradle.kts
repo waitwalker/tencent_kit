@@ -1,9 +1,11 @@
 import java.util.regex.Pattern
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 group = "io.github.v7lin.tencent_kit"
 
 plugins {
     id("com.android.library")
+    id("org.jetbrains.kotlin.android")
 }
 
 val packagePubspec = project.projectDir.parentFile.resolve("pubspec.yaml")
@@ -65,12 +67,6 @@ android {
         }
     }
 
-    dependencies {
-        add("vendorImplementation", fileTree(mapOf("include" to listOf("*.jar"), "dir" to "libs")))
-        testImplementation("junit:junit:4.13.2")
-        testImplementation("org.mockito:mockito-core:5.0.0")
-    }
-
     testOptions {
         unitTests {
             isReturnDefaultValues = true
@@ -83,4 +79,17 @@ android {
             }
         }
     }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_11)
+    }
+}
+
+dependencies {
+    add("vendorImplementation", fileTree(mapOf("include" to listOf("*.jar"), "dir" to "libs")))
+
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.mockito:mockito-core:5.0.0")
 }
