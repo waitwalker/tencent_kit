@@ -44,14 +44,14 @@ android {
     compileSdk = 36
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     resourcePrefix = "tencent_kit"
 
     defaultConfig {
-        minSdk = 16
+        minSdk = 24
         consumerProguardFiles("consumer-rules.pro")
         manifestPlaceholders["TENCENT_APP_ID"] = appId
     }
