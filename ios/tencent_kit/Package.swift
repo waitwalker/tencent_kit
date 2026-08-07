@@ -21,7 +21,10 @@ let package = Package(
         "TencentOpenAPI",
       ],
       path: "Sources/tencent_kit",
-      publicHeadersPath: ".",
+      publicHeadersPath: "include",
+      cSettings: [
+        .headerSearchPath("include/tencent_kit"),
+      ],
       linkerSettings: [
         .linkedFramework("Security"),
         .linkedFramework("SystemConfiguration"),

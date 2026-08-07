@@ -1,4 +1,4 @@
-#import "UIApplication+Hook.h"
+#import "./include/tencent_kit/UIApplication+Hook.h"
 #import <objc/runtime.h>
 
 @implementation UIApplication (Hook)

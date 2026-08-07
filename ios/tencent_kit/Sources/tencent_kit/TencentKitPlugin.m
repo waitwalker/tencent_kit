@@ -1,4 +1,4 @@
-#import "TencentKitPlugin.h"
+#import "./include/tencent_kit/TencentKitPlugin.h"
 #import <QQApiInterface.h>
 #import <TencentOAuth.h>
 
